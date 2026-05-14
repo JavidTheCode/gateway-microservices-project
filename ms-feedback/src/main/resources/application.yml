@@ -1,0 +1,25 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: ms-feedback
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/feedback_db
+    username: postgres
+    password: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+
